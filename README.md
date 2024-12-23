@@ -75,16 +75,16 @@ kNDVI = \tanh{\left(\frac{(NIR - Red)^2}{2\sigma^2}\right)}
 $$
 
 
-- \( \text{NIR} \): Reflectance in the near-infrared spectrum.
-- \( \text{Red} \): Reflectance in the red spectrum.
-- \( \sigma \): Estimated for each region to account for local vegetation variability.
+- **NIR**: Reflectance in the near-infrared spectrum.
+- **Red**: Reflectance in the red spectrum.
+- **σ**: Estimated for each region to account for local vegetation variability.
 
 #### Steps:
 1. **Cloud Masking**: Exclude clouds, shadows, and snow.
 2. **Sigma Estimation**:
-   \[
+   $$
    \sigma = \frac{1}{N} \sum_{i=1}^N |NIR_i - Red_i|
-   \]
+  $$
 3. **Dynamic Thresholding**: Refine anomalies using quantile regression.
 4. **Export**: Generate annual and seasonal kNDVI rasters.
 
@@ -98,19 +98,19 @@ Scripts:
 
 The **Vegetation Health Index (VHI)** integrates:
 1. **Vegetation Condition Index (VCI)**:
-   \[
+   $$
    VCI = \frac{kNDVI - kNDVI_{min}}{kNDVI_{max} - kNDVI_{min}} \times 100
-   \]
+   $$
 2. **Temperature Condition Index (TCI)**:
-   \[
+   $$
    TCI = \frac{LST_{max} - LST}{LST_{max} - LST_{min}} \times 100
-   \]
+  $$
 3. **Final VHI**:
-   \[
+  $$
    VHI = \alpha \cdot VCI + (1 - \alpha) \cdot TCI
-   \]
+  $$
    - \( \alpha = 0.5 \): Equal weight for VCI and TCI.
-
+$$
 Scripts:
 - [VHI Calculation](./vhi_calculation.js)
 
@@ -120,9 +120,9 @@ Scripts:
 
 ### Method:
 Annual anomalies for kNDVI, SPEI, PDSI, VHI, temperature, and precipitation were calculated:
-\[
+$$
 X_{anomaly(i,j,t)} = X_{(i,j,t)} - X_{mean(i,j)}
-\]
+$$
 
 Where:
 - \( X_{mean(i,j)} \): Long-term mean for pixel \( (i,j) \).
