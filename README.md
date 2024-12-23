@@ -88,7 +88,7 @@ kNDVI = \tanh{\left(\frac{(NIR - Red)^2}{2\sigma^2}\right)}
 4. **Export**: Generate annual and seasonal kNDVI rasters.
 
 Scripts:
-- [kNDVI Annual Calculation]([./kndvi_annual.js](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Kndvi_Annual_Pak.js))
+- [kNDVI Annual Calculation](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Kndvi_Annual_Pak.js)
 - [kNDVI Seasonal Calculation](./kndvi_seasonal.js)
 
 ---
