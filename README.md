@@ -54,15 +54,14 @@ Refer to Figure 1 in the paper for detailed maps of elevation gradients and land
 
 The analysis integrates optical, thermal, and climatic datasets, ensuring spatial and temporal consistency.
 
-| **Dataset**             | **Source**         | **Spatial Resolution** | **Temporal Resolution** | **Notes**                       |
-|--------------------------|--------------------|-------------------------|--------------------------|----------------------------------|
-| Landsat 5, 7, 9 (SR)    | GEE               | 30 meters              | Monthly                 | Reflectance data for kNDVI.     |
-| Land Surface Temperature | Landsat           | 30 meters              | Monthly                 | Derived from thermal bands.     |
-| Precipitation            | TerraClimate      | 4 km                   | Monthly                 | High-resolution climatic data.  |
-| PDSI                    | TerraClimate      | 4 km                   | Monthly                 | Drought severity index.         |
-| SPEI                    | SPEIbase          | 5.6 km                 | Monthly                 | Standardized precipitation index.|
+| **Dataset**             | **Source**                                                                                       | **Spatial Resolution** | **Temporal Resolution** | **Notes**                       |
+|--------------------------|------------------------------------------------------------------------------------------------|-------------------------|--------------------------|----------------------------------|
+| Landsat 5, 7, 9 (SR)    | [Google Earth Engine (GEE)](https://developers.google.com/earth-engine/datasets/)               | 30 meters              | Monthly                 | Reflectance data for kNDVI.     |
+| Land Surface Temperature | [Landsat (NCEP_TPW.js)](https://github.com/sofiaermida/Landsat_SMW_LST/blob/master/modules/NCEP_TPW.js) | 30 meters              | Monthly                 | Derived from thermal bands.     |
+| Precipitation            | [TerraClimate](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE) | 4 km                   | Monthly                 | High-resolution climatic data.  |
+| PDSI                    | [TerraClimate](https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE) | 4 km                   | Monthly                 | Drought severity index.         |
+| SPEI                    | [SPEIbase](https://developers.google.com/earth-engine/datasets/catalog/CSIC_SPEI_2_9)          | 5.6 km                 | Monthly                 | Standardized precipitation index.|
 
----
 
 ## kNDVI Calculation
 
