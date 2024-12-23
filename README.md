@@ -84,7 +84,7 @@ $$
 1. **Cloud Masking**: Exclude clouds, shadows, and snow.
 2. **Sigma Estimation**:
    $$
-   \sigma = \frac{1}{N} \sum_{i=1}^N |NIR_i - Red_i|
+   sigma = \frac{1}{N} \sum_{i=1}^N |NIR_i - Red_i|
    $$
 3. **Dynamic Thresholding**: Refine anomalies using quantile regression.
 4. **Export**: Generate annual and seasonal kNDVI rasters.
