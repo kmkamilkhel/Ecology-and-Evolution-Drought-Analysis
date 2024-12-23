@@ -79,16 +79,17 @@ $$
 - **Red**: Reflectance in the red spectrum.
 - **σ**: Estimated for each region to account for local vegetation variability.
 
-#### Steps:
+### Steps:
+
 1. **Cloud Masking**: Exclude clouds, shadows, and snow.
 2. **Sigma Estimation**:
    $$
    \sigma = \frac{1}{N} \sum_{i=1}^N |NIR_i - Red_i|
-  $$
+   $$
 3. **Dynamic Thresholding**: Refine anomalies using quantile regression.
 4. **Export**: Generate annual and seasonal kNDVI rasters.
 
-Scripts:
+#### Scripts:
 - [kNDVI Annual Calculation](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Kndvi_Annual_Pak.js)
 - [kNDVI Seasonal Calculation](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Kndvi_Seasonal_Pak.js)
 
@@ -96,46 +97,42 @@ Scripts:
 
 ## VHI Calculation
 
-The **Vegetation Health Index (VHI)** integrates:
+The **Vegetation Health Index (VHI)** integrates the following components:
+
 1. **Vegetation Condition Index (VCI)**:
    $$
    VCI = \frac{kNDVI - kNDVI_{min}}{kNDVI_{max} - kNDVI_{min}} \times 100
    $$
+
 2. **Temperature Condition Index (TCI)**:
    $$
    TCI = \frac{LST_{max} - LST}{LST_{max} - LST_{min}} \times 100
-  $$
+   $$
+
 3. **Final VHI**:
-  $$
+   $$
    VHI = \alpha \cdot VCI + (1 - \alpha) \cdot TCI
-  $$
-   - \( \alpha = 0.5 \): Equal weight for VCI and TCI.
-$$
-Scripts:
-- [VHI Calculation](./vhi_calculation.js)
+   $$
+
+   - **\( \alpha = 0.5 \)**: Equal weight for VCI and TCI.
+
+#### Scripts:
+- [VHI Calculation](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/VHI_Calculation.js)
 
 ---
 
 ## Anomaly Detection
 
 ### Method:
-Annual anomalies for kNDVI, SPEI, PDSI, VHI, temperature, and precipitation were calculated:
+Annual anomalies for **kNDVI**, **SPEI**, **PDSI**, **VHI**, temperature, and precipitation were calculated as follows:
 $$
 X_{anomaly(i,j,t)} = X_{(i,j,t)} - X_{mean(i,j)}
 $$
 
 Where:
-- \( X_{mean(i,j)} \): Long-term mean for pixel \( (i,j) \).
-- \( X_{(i,j,t)} \): Value at pixel \( (i,j) \) in year \( t \).
+- **\( X_{mean(i,j)} \)**: Long-term mean for pixel \((i,j)\).
+- **\( X_{(i,j,t)} \)**: Value at pixel \((i,j)\) in year \(t\).
 
-Scripts:
-- [Anomaly Detection](./anomaly_detection.js)
+#### Scripts:
+- [Anomaly Detection](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Anomaly_Detection.js)
 
----
-
-## How to Use the Repository
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/vegetation-climatic-analysis.git
-   cd vegetation-climatic-analysis
