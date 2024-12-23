@@ -70,9 +70,10 @@ The analysis integrates optical, thermal, and climatic datasets, ensuring spatia
 The **Kernel NDVI (kNDVI)** was calculated using Landsat imagery (2001-2023). Unlike traditional NDVI, kNDVI incorporates a Gaussian kernel function to model non-linear vegetation reflectance relationships, enhancing its sensitivity in densely vegetated areas.
 
 #### Formula:
-\[
+$$
 kNDVI = \tanh{\left(\frac{(NIR - Red)^2}{2\sigma^2}\right)}
-\]
+$$
+
 
 - \( \text{NIR} \): Reflectance in the near-infrared spectrum.
 - \( \text{Red} \): Reflectance in the red spectrum.
