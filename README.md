@@ -89,7 +89,7 @@ kNDVI = \tanh{\left(\frac{(NIR - Red)^2}{2\sigma^2}\right)}
 
 Scripts:
 - [kNDVI Annual Calculation](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Kndvi_Annual_Pak.js)
-- [kNDVI Seasonal Calculation](./kndvi_seasonal.js)
+- [kNDVI Seasonal Calculation](https://github.com/kmkamilkhel/Ecology-and-Evolution-Drought-Analysis/blob/main/Kndvi_Seasonal_Pak.js)
 
 ---
 
